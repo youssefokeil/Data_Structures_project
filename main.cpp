@@ -1,14 +1,22 @@
 #include <iostream>
 #include <fstream> 
+#include "minify.h"
 
 
 using namespace std ; 
 
 int main (){
+    ifstream ifile ("ex.xml") ;
+    ofstream ofile ("result.xml") ;
+    while(! (ifile.is_open()))
+    {
+        cout << "file not found" <<endl ; 
+        string name ; 
+        cin >> name ; 
+        ifile.open(name) ;
+    }
+    minify (ifile,"result.xml") ; 
 
-    cout << "We're the Data structures team" ; 
-    cout<<"Data Structure Project";
-    cout << "We're going to implement a project that reads a file and stores it in a data structure" ;
     return 0 ; 
 }
 /* Team members : 
