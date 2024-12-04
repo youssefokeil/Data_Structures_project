@@ -7,7 +7,7 @@ using namespace std ;
 int main (){
 
     cout << "We're the Data structures team" ; 
-
+    cout << "We're going to implement a project that reads a file and stores it in a data structure" ;
     return 0 ; 
 }
 /* Team members : 
