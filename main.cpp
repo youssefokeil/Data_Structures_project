@@ -7,7 +7,7 @@ using namespace std ;
 int main (){
 
     cout << "We're the Data structures team" ; 
-
+    cout<<"Data Strucure Project";
     return 0 ; 
 }
 /* Team members : 
