@@ -7,7 +7,13 @@ using namespace std ;
 int main (){
 
     cout << "We're the Data structures team" ; 
+<<<<<<< HEAD
     cout<<"Data Strucure Project";
+||||||| 7d417ba
+
+=======
+    cout << "We're going to implement a project that reads a file and stores it in a data structure" ;
+>>>>>>> 57c25fd1baaddd6b4e11394ec3e226dac939e087
     return 0 ; 
 }
 /* Team members : 
