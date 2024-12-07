@@ -7,3 +7,5 @@ compression.exe
 test2.xml
 test_minifying.xml
 tempCodeRunnerFile.cpp
+compressed_large.xml
+test_large.xml

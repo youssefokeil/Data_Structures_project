@@ -64,20 +64,6 @@ string get_file_content_minified(ifstream& in){
     }
     return file;
 }
-string get_file_content_minified_s(string s){
-    string file = "";
-    string temp;
-    int start,end;
-
-    stringstream ss(s);
-    while(getline(ss,temp)){
-        start = temp.find_first_not_of(" \t\n");
-        if (start == string::npos) continue;;
-        end = temp.find_last_not_of(" \t\n");
-        file += temp.substr(start,end-start+1);
-    }
-    return file;
-}
 
 
 void compress(ifstream& in,ofstream& out){
@@ -108,26 +94,21 @@ void compress(ifstream& in,ofstream& out){
     s="";
     for (int i = 0; i < tokens_len; i++)
     {
-        s+=tokens[i]+" ";
+        if(i+1>= tokens_len || (tokens[i][0] == '<' && tokens[i+1][0] == '<'))
+        {
+            s+=tokens[i];
+        }
+        else{
+            s+=tokens[i]+" ";
+        }
     }
-    s=get_file_content_minified_s(s);
 
-    cout<<s;
-
-    
-    
-    
-    
-
-    
-
-
-
+    out<<s;
 }
 
 int main() {
-    ifstream input("test2.xml");
-    ofstream output("test_minifying.xml");
+    ifstream input("test_large.xml");
+    ofstream output("compressed_large.xml");
     compress(input,output);
 
     
