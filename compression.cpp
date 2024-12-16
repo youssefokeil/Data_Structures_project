@@ -1,8 +1,8 @@
 #include <iostream>
 #include <fstream>
-#include <regex>
 #include <string>
 #include <unordered_map>
+#include "beautify.h"
 using namespace std;
 
 
@@ -92,6 +92,15 @@ void compress(ifstream& in,ofstream& out){
         }
     }
     s="";
+
+    for (pair<string,string> i:symbols)
+    {
+        s+=i.first+" "+i.second+" ";
+    }
+    
+    s+="End_Symbols_mapping ";
+
+
     for (int i = 0; i < tokens_len; i++)
     {
         if(i+1>= tokens_len || (tokens[i][0] == '<' && tokens[i+1][0] == '<'))
@@ -106,12 +115,49 @@ void compress(ifstream& in,ofstream& out){
     out<<s;
 }
 
-int main() {
-    ifstream input("test_large.xml");
-    ofstream output("compressed_large.xml");
-    compress(input,output);
 
-    
+void decompress(ifstream& in, ofstream& out){
+    string s = get_file_content_minified(in);
+    // cout<<s<<endl;
+    unordered_map<string,string> symbols;
+    vector<string> tokens;
+    split_XML(s,tokens);
+    int tokens_len=tokens.size();
+
+    int file_start;
+
+    for (int i = 0; i < tokens_len; i+=2)
+    {
+        if(tokens[i] == "End_Symbols_mapping"){
+            file_start=i+1;
+            break;
+        }
+        else{
+            symbols["$"+tokens[i+1]]=tokens[i];
+        }
+    }
+
+    for (int i = file_start; i < tokens_len; i++)
+    {
+        if(symbols.count(tokens[i])){
+            tokens[i]= (symbols[tokens[i]]);
+        }
+    }
+
+    s="";
+    for (int i = file_start; i < tokens_len; i++)
+    {
+        if(i+1>= tokens_len || (tokens[i][0] == '<' && tokens[i+1][0] == '<'))
+        {
+            s+=tokens[i];
+        }
+        else{
+            s+=tokens[i]+" ";
+        }
+    }
+    out<<s;
+
     
 
 }
+
