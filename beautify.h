@@ -6,11 +6,10 @@ using namespace std;
 
 // Function to trim leading and trailing spaces from a string
 string trim(const string& str) {
-    int firstIndex = str.find_first_not_of(" \t");
-    if (firstIndex == string::npos) return "";
-    int lastIndex = str.find_last_not_of(" \t");
-    cout<<str.substr(firstIndex, lastIndex)<<endl;
-    return str.substr(firstIndex, lastIndex);
+    int firstIndex = str.find_first_not_of(" \t\n");
+    if (firstIndex == -1) return "";
+    int lastIndex = str.find_last_not_of(" \t\n");
+    return str.substr(firstIndex, lastIndex-firstIndex+1);
 }
 
 // Function to split a single-line XML into tags and text content
@@ -20,7 +19,7 @@ void splitXML(const string& xml, vector<string>& tokens) {
         if (xml[pos] == '<') {
             // Find the end of the tag
             int end = xml.find('>', pos);
-            if (end == string::npos) break;
+            if (end == -1) break;
             tokens.push_back(xml.substr(pos, end - pos + 1));
             pos = end + 1;
         } else {
@@ -46,16 +45,16 @@ void beautifyXML(const string& inputFile, const string& outputFile) {
 
     string xmlContent;
     getline(input, xmlContent, '\0'); // Read the entire file into a single string
-//    cout<<xmlContent<<endl;
+
     vector<string> tokens;
     splitXML(xmlContent, tokens); // Split the XML into tags and text content
-//    for(int i=0 ;i<tokens.size() ;i++){
-//        cout<<tokens[i]<<endl;
-//    }
+
     int indentLevel = 0;
     const string indent = "  "; // Indent with 2 spaces
 
     for (string token : tokens) {
+        // to remove empty tokens(handel some case did not removed by trim func)
+        if(token[0]-'0'==-38)continue;
         if (token[0] == '<') {
             if (token[1] == '/') {
                 // Closing tag, reduce indent
@@ -78,5 +77,4 @@ void beautifyXML(const string& inputFile, const string& outputFile) {
     output.close();
     cout << "Beautified XML saved to " << outputFile << endl;
 }
-
 
