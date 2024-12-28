@@ -14,13 +14,26 @@ void  minify(istream& ifile, const string& outputFileName) {
     }
     vector <string> lines ;
     string s ; 
-    while (ifile >> s )
+    while ( getline(ifile,s) )
     {
+        for (int i=0 ; i<s.size(); i++)
+        {
+            if (s[i] == ' ')
+            {
+                s.erase(s.begin()+i) ; 
+                i-- ; 
+            }
+            else if (s[i] == '<')
+            {
+                break; 
+            }
+        }
         lines.push_back(s) ; 
     }
+
     while (! lines.empty())
     {
-        ofile << lines.front()  ; 
+        ofile << lines.front()   ; 
         lines.erase(lines.begin()) ;
     }
 
