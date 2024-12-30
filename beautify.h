@@ -37,10 +37,9 @@ void splitXML(const string& xml, vector<string>& tokens) {
 // Function to beautify XML from a single line
 void beautifyXML(const string& inputFile, const string& outputFile) {
     ifstream input(inputFile);
-    ofstream output(outputFile);
 
-    if (!input.is_open() || !output.is_open()) {
-        cerr << "Error opening files." << endl;
+    if (!input.is_open()) {
+        cerr << "Error opening input files." << endl;
         return;
     }
 
@@ -52,6 +51,11 @@ void beautifyXML(const string& inputFile, const string& outputFile) {
 //    for(int i=0 ;i<tokens.size() ;i++){
 //        cout<<tokens[i]<<endl;
 //    }
+    ofstream output(outputFile);
+    if (!output.is_open()) {
+        cerr << "Error opening output files." << endl;
+        return;
+    }
     int indentLevel = 0;
     const string indent = "  "; // Indent with 2 spaces
 

@@ -7,27 +7,6 @@
 using namespace std;
 
 
-string symbol_gen(){
-
-    char symbols[62] = {'0','1','2','3','4','5','6','7','8','9',
-    'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'
-    ,'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
-
-    static int c1=-1;
-    static int c2=0; 
-
-    c1++;
-    if(c1>61){
-        c1=0;
-        c2++;
-    }
-    string temp="";
-    temp+=symbols[c1];
-    temp+=symbols[c2];
-    return temp;
-}
-
-
 void split_XML(const string& xml, vector<string>& tokens) {
     size_t pos = 0;
     while (pos < xml.length()) {
@@ -71,6 +50,7 @@ void compress(const string& input_name,const string& output_name){
     ifstream in(input_name);
     ofstream out(output_name);
     string s = get_file_content_minified(in);
+    int symbol_no = 0;
     // cout<<s<<endl;
     unordered_map<string,string> symbols;
     unordered_map<string,int> repeat;
@@ -84,7 +64,7 @@ void compress(const string& input_name,const string& output_name){
     for (auto token:repeat)
     {
         if((token.second>5 && token.first.length()>3)){
-            string generated_symbol = symbol_gen();
+            string generated_symbol = to_string(symbol_no++);
             symbols[token.first]=generated_symbol;
         }
     }
@@ -116,6 +96,7 @@ void compress(const string& input_name,const string& output_name){
     }
 
     out<<s;
+    cout<<"File Compressed Succesfully"<<endl;
 }
 
 
@@ -123,7 +104,6 @@ void decompress(const string& input_name,const string& output_name){
     ifstream in(input_name);
     ofstream out(output_name);
     string s = get_file_content_minified(in);
-    // cout<<s<<endl;
     unordered_map<string,string> symbols;
     vector<string> tokens;
     split_XML(s,tokens);
@@ -161,7 +141,8 @@ void decompress(const string& input_name,const string& output_name){
         }
     }
     out<<s;
-
+    beautifyXML(output_name,output_name);
+    cout<<"File Compressed Succesfully"<<endl;
     
 
 }
