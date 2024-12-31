@@ -1,0 +1,4 @@
+D:\Learning\The college\Data structures\Studio workspace\GUIproject\GUIproject\x64\Debug\GUIproject.vcxproj.AssemblyReference.cache
+D:\Learning\The college\Data structures\Studio workspace\GUIproject\GUIproject\x64\Debug\GUIproject.MyForm.resources
+D:\Learning\The college\Data structures\Studio workspace\GUIproject\GUIproject\x64\Debug\GUIproject.vcxproj.GenerateResource.cache
+D:\Learning\The college\Data structures\Studio workspace\GUIproject\GUIproject\x64\Debug\GUIproje.C96D40B5.Up2Date
