@@ -11,7 +11,7 @@ bool istag (string s) ;
 
 
 void ToJSON ( istream & ifile  ,string  name ){
-    ofstream ofile ("result.json") ;
+    ofstream ofile (name) ;
     ofile << "{" << endl ;
     vector <string> parsed = parse(ifile) ;
     
