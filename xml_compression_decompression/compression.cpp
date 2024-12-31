@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 #include <unordered_map>
-#include "beautify.h"
+#include "../xml_beautify/beautify.h"
 #include "compression.h"
 using namespace std;
 
