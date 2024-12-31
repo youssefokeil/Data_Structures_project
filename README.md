@@ -49,5 +49,11 @@ A comprehensive XML processing and editing tool that enables beautification, com
 ## **How to Run**
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo-name
+   git clone (https://github.com/youssefokeil/Data_Structures_project.git)
 ## Contributors
+-# Yousef Okeil
+-# Mahmoud Mostafa
+-# Khaled Mohamed
+-# Adham NasrAllah
+-# Yahia
+-# Mariam
