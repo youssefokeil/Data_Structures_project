@@ -36,15 +36,20 @@ void splitXML(const string& xml, vector<string>& tokens) {
 // Function to beautify XML from a single line
 void beautifyXML(const string& inputFile, const string& outputFile) {
     ifstream input(inputFile);
-    ofstream output(outputFile);
 
-    if (!input.is_open() || !output.is_open()) {
+
+    if (!input.is_open() ) {
         cerr << "Error opening files." << endl;
         return;
     }
 
     string xmlContent;
     getline(input, xmlContent, '\0'); // Read the entire file into a single string
+    ofstream output(outputFile);
+    if (!output.is_open()) {
+        cerr << "Error opening files." << endl;
+        return;
+    }
 
     vector<string> tokens;
     splitXML(xmlContent, tokens); // Split the XML into tags and text content
