@@ -51,9 +51,9 @@ A comprehensive XML processing and editing tool that enables beautification, com
    ```bash
    git clone (https://github.com/youssefokeil/Data_Structures_project.git)
 ## Contributors
--# Yousef Okeil
--# Mahmoud Mostafa
--# Khaled Mohamed
--# Adham NasrAllah
--# Yahia
--# Mariam
+# . Yousef Okeil
+# . Mahmoud Mostafa
+# . Khaled Mohamed
+# . Adham NasrAllah
+# . Yahia
+# . Mariam
