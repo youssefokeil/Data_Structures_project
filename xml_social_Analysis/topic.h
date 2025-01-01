@@ -1,7 +1,7 @@
 #ifndef TOPIC_H
 #define TOPIC_H
 
-#include "post.h"
+#include "../xml_post_search/post.h"
 #include <vector>
 
 class topic {
