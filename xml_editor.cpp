@@ -39,7 +39,9 @@ int main(int argc, char* argv[]){
     int id;
     vector<int> ids;
 
-    
+    //for word and topic search
+    vector<vector<string>> all_users;
+    vector<string> related_topic_posts;
 
     if(flag1 == "-i" && flag2=="-o"){
         input_name = argv[3];
@@ -159,7 +161,29 @@ int main(int argc, char* argv[]){
             cout << suggestion.second << " ";
         cout << endl;
     }
-    else if(command=="search"){
-     
+    else if(command=="search"){ 
+     string filename=argv[5];
+     allusers=parseXMLToVector(filename); 
+     users_list my_users;
+     my_users.set_all_users(allusers);
+     string mycommand=argv[2];
+     string intended=argv[3];
+    if(mycommand=="-w"){
+	   related_topic_posts= my_users.searchword(intended);
+	    int n=0;
+	    for(auto i : related_topic_posts){
+		    n++;
+		    cout<<endl<<n<<": "<<i<<endl;
+	    }
+    } 
+     else if(mycommand=="-t"){
+	     related_topic_posts=my_users.search_topic(intended);
+	     int n=0;
+	     for(auto i : related_topic_posts){
+		    n++;
+		    cout<<endl<<n<<": "<<i<<endl;
+	    }
+}
+	    
 	    
 }
