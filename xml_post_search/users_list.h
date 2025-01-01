@@ -1,7 +1,9 @@
+#include "user.h"
+
 #ifndef USERS_LIST_H
 #define USERS_LIST_H
 
-#include "user.h"
+
 
 class users_list {
 private:
