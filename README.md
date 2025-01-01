@@ -55,6 +55,6 @@ A comprehensive XML processing and editing tool that enables beautification, com
 # . Mahmoud Mostafa
 # . Khaled Mohamed
 # . Ahmed Khedr
-# . Adham NasrAllah
+# . Adham Nasreldin
 # . Yahia
 # . Mariam
