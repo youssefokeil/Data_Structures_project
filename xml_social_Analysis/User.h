@@ -16,7 +16,7 @@ public:
     std::string user_name;
     int user_id = 0;
     int num_followers = 0, num_following = 0;
-    user() : id(0) {}
+    User() : id(0) {}
     static std::multimap<int, int> id_to_following;
     static std::multimap<int, int> following_count_to_id;
     static std::multimap<int, int> follower_count_to_id;
