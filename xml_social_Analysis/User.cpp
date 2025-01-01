@@ -110,10 +110,7 @@ map<int, string> User::suggest(map<int, User> id_to_user, int id) {
 	// sort both arrays
 	sort(f_of_followers.begin(), f_of_followers.end());
 	sort(user_followers_ids.begin(), user_followers_ids.end());
-
-	cout << "follower of followers size:" << f_of_followers.size() << endl;
-	cout << "followers size:" << user_followers_ids.size() << endl;
-
+	
 	// have to check that they aren't already followers
 	// we use the code we used in missing numbers in hacker rank
 	vector<int> suggest_ids;
