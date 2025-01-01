@@ -6,12 +6,17 @@
 #include <vector>
 #include <string>
 
+#include "topic.h"
+
 class User {
+private:
+    int id;
+    vector<topic> topics;
 public:
     std::string user_name;
     int user_id = 0;
     int num_followers = 0, num_following = 0;
-
+    user() : id(0) {}
     static std::multimap<int, int> id_to_following;
     static std::multimap<int, int> following_count_to_id;
     static std::multimap<int, int> follower_count_to_id;
@@ -30,6 +35,12 @@ public:
     static void most_active(std::map<int, User> id_to_user);
     static std::map<int, std::string> suggest(std::map<int, User> id_to_user, int id);
     static std::map<int, std::string> mutual(std::map<int, User> id_to_user, std::vector<int> ids);
+
+    void set_topics(vector<string> todecompose);
+    vector<string> get_posts_of_topic(string topic_name);
+    vector<string> searchword(string word);
+
+
 
 };
 
