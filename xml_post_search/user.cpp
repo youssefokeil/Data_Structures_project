@@ -1,4 +1,4 @@
-#include "./user.h"
+#include "user.h"
 
 void user::set_topics(vector<string> todecompose) {
     int i = 0;
