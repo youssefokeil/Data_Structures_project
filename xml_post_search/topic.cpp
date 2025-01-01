@@ -1,4 +1,4 @@
-#include "./topic.h"
+#include "topic.h"
 //#include "./post.h"
 void topic::add_post(string post_data) {
     posts.emplace_back(post_data);
