@@ -6,7 +6,7 @@ void users_list::set_all_users(vector<vector<string>> all_users) {
     }
 }
 void users_list::set_users(vector<string> input_data) {
-    user new_user;
+    User new_user;
     new_user.set_topics(input_data);
     users.push_back(new_user);
 }
