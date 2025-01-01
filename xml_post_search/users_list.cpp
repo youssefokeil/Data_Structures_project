@@ -1,4 +1,4 @@
-#include "./users_list.h"
+#include "users_list.h"
 
 void users_list::set_all_users(vector<vector<string>> all_users) {
     for (auto user : all_users) {
