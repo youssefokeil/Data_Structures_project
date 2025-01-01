@@ -16,8 +16,12 @@
 //post and topic searh includes
 
 #include "xml_post_search/users_list.h"
-
-
+#include "xml_post_search/user.h"
+#include "xml_post_search/post.h"
+#include "xml_post_search/node.h"
+#include "xml_post_search/my_linked_list.h"
+#include "xml_post_search/hashing_instant.h"
+#include "xml_post_search/topic.h"
 using namespace std;
 
 
