@@ -1,5 +1,5 @@
-#ifndef USER_H
-#define USER_H
+#ifndef USER2_H
+#define USER2_H
 
 #include "topic.h"
 
