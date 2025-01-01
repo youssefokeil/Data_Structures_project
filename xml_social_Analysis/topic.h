@@ -14,7 +14,7 @@ public:
     void add_post(string post_data);
     vector<string> get_posts_of_topic();
     vector<string> searchword(string word);
-    friend class user;
+    friend class User;
 };
 
 #endif
