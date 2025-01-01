@@ -142,7 +142,7 @@ void decompress(const string& input_name,const string& output_name){
     }
     out<<s;
     beautifyXML(output_name,output_name);
-    cout<<"File Compressed Succesfully"<<endl;
+    cout<<"File Decompressed Succesfully"<<endl;
     
 
 }
