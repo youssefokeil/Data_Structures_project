@@ -1,4 +1,4 @@
-#include "./hashing_instant.h"
+#include "hashing_instant.h"
 #define char_test(x) (((x) >= 48 && (x) <= 57) || ((x) >= 65 && (x) <= 90) || ((x) >= 97 && (x) <= 122))
 hashing_instant::hashing_instant(string working_on) {
     strList = breakString(working_on);
