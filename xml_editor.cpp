@@ -163,9 +163,9 @@ int main(int argc, char* argv[]){
     }
     else if(command=="search"){ 
      string filename=argv[5];
-     allusers=parseXMLToVector(filename); 
+     all_users=parseXMLToVector(filename); 
      users_list my_users;
-     my_users.set_all_users(allusers);
+     my_users.set_all_users(all_users);
      string mycommand=argv[2];
      string intended=argv[3];
     if(mycommand=="-w"){
@@ -186,4 +186,5 @@ int main(int argc, char* argv[]){
 }
 	    
 	    
+}
 }
