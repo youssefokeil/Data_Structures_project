@@ -106,7 +106,7 @@ int main(int argc, char* argv[]){
         ifstream input(input_name);
         minify(input,output_name);
     }
-    else if(command == "convert"){
+    else if(command == "json"){
         ifstream input(input_name);
         ToJSON(input,output_name);
     }
