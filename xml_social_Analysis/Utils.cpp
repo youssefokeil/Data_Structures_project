@@ -10,7 +10,7 @@
 #include <algorithm>
 #include "User.h"
 #include "Constants.h"
-
+#include "../xml_beautify/beautify.h"
 
 
 using namespace std;
@@ -91,7 +91,7 @@ void draw(map<int, User>& id_to_users, string graph_path) {
 	// printing users & adding to dot file
 	for (auto map_element : id_to_users) {
 		User my_user = map_element.second;
-		my_user.display();
+		//my_user.display();
 		for (int j = 0; j < my_user.follower_ids.size();j++) {
 			int follower_id = my_user.follower_ids[j];
 			myDOT << map_element.first << "->" << follower_id << ";" << endl;
@@ -108,12 +108,6 @@ void draw(map<int, User>& id_to_users, string graph_path) {
 
 }
 
-string trim(const string& str) {
-	size_t first = str.find_first_not_of(" \t\n\r");
-	if (first == string::npos) return "";
-	size_t last = str.find_last_not_of(" \t\n\r");
-	return str.substr(first, (last - first + 1));
-}
 
 vector<vector<string>> parseXMLToVector(const string& filename) {
 	vector<string> user;
