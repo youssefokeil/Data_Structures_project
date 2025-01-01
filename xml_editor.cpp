@@ -13,6 +13,10 @@
 #include "xml_social_Analysis/Utils.h"
 #include "xml_social_Analysis/User.h"
 
+//post and topic searh includes
+
+#include "xml_post_search/users_list.h"
+
 
 using namespace std;
 
@@ -155,5 +159,7 @@ int main(int argc, char* argv[]){
             cout << suggestion.second << " ";
         cout << endl;
     }
-
+    else if(command=="search"){
+     
+	    
 }
