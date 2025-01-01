@@ -42,19 +42,20 @@ A comprehensive XML processing and editing tool that enables beautification, com
 - **`users_list.cpp` / `users_list.h`**: Manages the list of users.
 
 ### Entry Point:
-- **`main.cpp`**: Entry point of the application, integrating all modules.
+- **`xml_editor.cpp`**: Entry point of the application, integrating all modules.
 
 ---
 
 ## **How to Run**
 1. Clone the repository:
    ```bash
+   Run xml_editor.exe or
    git clone [https://github.com/youssefokeil/Data_Structures_project.git]
 ## Contributors
-# . Yousef Okeil
-# . Mahmoud Mostafa
-# . Khaled Mohamed
-# . Ahmed Khedr
-# . Adham Nasreldin
-# . Yahia
-# . Mariam
+**. Yousef Okeil**
+**. Mahmoud Mostafa**
+**. Khaled Mohamed**
+**. Ahmed Khedr**
+**. Adham Nasreldin**
+**. Yahia**
+**. Mariam**
