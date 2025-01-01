@@ -3,11 +3,11 @@
 #define USERS_LIST_H
 
 
-#include "user.h"
+#include "User.h"
 
 class users_list {
 private:
-    vector<user> users;
+    vector<User> users;
 
 public:
     users_list() {}
