@@ -52,10 +52,10 @@ A comprehensive XML processing and editing tool that enables beautification, com
    Run xml_editor.exe or
    git clone [https://github.com/youssefokeil/Data_Structures_project.git]
 ## Contributors
-**. Yousef Okeil**
-**. Mahmoud Mostafa**
-**. Khaled Mohamed**
-**. Ahmed Khedr**
-**. Adham Nasreldin**
-**. Yahia**
-**. Mariam**
+### **. Yousef Okeil**
+### **. Mahmoud Mostafa**
+### **. Khaled Mohamed**
+### **. Ahmed Khedr**
+### **. Adham Nasreldin**
+### **. Yahia**
+### **. Mariam**
